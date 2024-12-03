@@ -705,6 +705,14 @@
    ```
 
 
+## 关于Python语法
+1. `nonlocal` / `global`:
+
+    - `nonlocal` is used in **nested functions**, when a inner function wants to reference an **immutable** variable outside of its scope.
+    - `global` is used for **global variables**, when a function wants to change its value, the `global` keyword should be used.
+    - `nonlocal` applied to global variables will cause Error.
+    - If a variable is **mutable** e.g. a list, then `nonlocal` and `global` are not necessary.
+
 ## General Notices
 1. 在循环中，如果循环结束条件是可变元素（dict, deque, list, ...），要注意这个元素是否被改变(**del**, **pop**, **popleft**, ...)，如果在循环过程中这个被改变，那么可能产生以外的效果。
 2. 尤其是在使用deque, dict, list的时候，当心这个可变元素在其他地方被修改之后导致的element missing, empty deque/list的问题。
