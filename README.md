@@ -367,7 +367,15 @@
         return False, path
       ```
 5.  在binary tree中，一个重要的观察点是**是否有记录父节点**，如果有的话就可以从节点向上遍历。
-6.  在**BST**中添加一个节点
+6.  关于BST的定义：
+      1. 根节点value大于左子树中**所有**value；
+      2. 根节点value小于右子树中**所有**value；
+      3. 左子树，右子树都满足如上定义
+   
+7. BST / min heap?
+      1. BST根节点大于左子树所有节点，小于右子树所有节点
+      2. min heap的根节点为以其为根的树的**最小点**
+9.  在**BST**中添加一个节点
       ```
       class TreeNode:
         def __init__(self, value, left: Optional[TreeNode]=None, right: Optional[TreeNode]=None):
@@ -395,7 +403,7 @@
           else:
             insert_helper(cur_node.left, value)
       ```
-7. 对BST进行in-order traversal会得到一个递增序列。为了重建一个平衡的BST，可以从一个递增的序列出发递归构造。 
+10. 对BST进行in-order traversal会得到一个递增序列。为了重建一个平衡的BST，可以从一个递增的序列出发递归构造。 
 ## Graph
 1. 图一般以邻接矩阵和邻接表的形式给出。
 2. 给定连接的边，建图： 
