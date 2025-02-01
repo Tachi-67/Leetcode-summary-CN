@@ -616,6 +616,9 @@
    ```
 
 ## Union Find Set
+并查集的atom element是需要cover的数据中的任何单个元素，建立一个并查集需要知道其作用的范围。node = element of problem；
+如下，node就等于单个num，建立这个并查集需要首先传入nums数组。
+与此同时，parent, rank, size是整个集合的功能而不是单个元素的功能，他们负责记录所有元素的相关信息。
 1. 并查集的实现：
    ```
       class UnionFind:
