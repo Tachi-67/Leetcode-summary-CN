@@ -453,6 +453,12 @@
          2. 对于队首元素连接的点，入度-1
          3. 如果这些点入度变为了0，入队
       4. ans list则为答案，如果过短说明有环。
+ 8. Dijkstra算法：带权图，不含负边，获得从一点出发到所有点的最短路径。模板题：https://leetcode.com/problems/network-delay-time/
+      - 记录一个dis = {}, 记录了每个点到出发点的最短距离。
+      - 记录一个heap，可以使用`heapq`, 记录被处理过的节点及其当前到出发点最短路径长度。
+      - 初始状态：`dis[st] = 0`, `heap = [(0, st)]` （注：heapq会逐个比较tuple元素，第一个就是dis）
+      - 当heap非空，取出堆顶，优化其邻居的距离dis。
+      - 如果邻居的距离可被优化，则把邻居加入heap
 
 ## Heap (Python heapq)
 0. 关于heap的实现：https://www.youtube.com/watch?v=t0Cq6tVNRBA
